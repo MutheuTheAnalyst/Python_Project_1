@@ -1,2 +1,6 @@
 # Python_Project_1
-In this project, I use the 'Python Programming Language' to perform data analysis on a given data set.
+## Introduction
+
+- In this project, a 'Tracks Dataset' obtained from the streaming plattform,Spotify is presented.
+
+- My aim is to perform exploratary data analysis on the dataset using the 'Python Programming Language' and draw meaningful insights in regards to diffrent tracks performance on the Spotify Plattform.
