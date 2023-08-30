@@ -121,17 +121,34 @@ dtypes: float64(9), int64(6), object(5)
       
  ![image](https://github.com/MutheuTheAnalyst/Python_Project_1/assets/92978069/78dfd761-2b8c-4a1f-ab24-5d7648e2aad0)
 
- ### 2) Regression Plot to display the correlation between the variables Loudness and Energy .
+ ### 2) Regression Plot to display the correlation between the variables 'Loudness' and 'Energy'.
 
  - From the visualization,it is clear to see that the two variables are highly positively correlated.
 
  - **Code:**
  
-plt.figure(figsize=(10,6))
+   plt.figure(figsize=(10,6))
 
-sns.regplot(data=sample_df,y="loudness",x="energy",color="c").set(title="Loudness vs Energy Correlation")
+   snsA.regplot(data=sample_df,y="loudness",x="energy",color="c").set(title="Loudness vs Energy Correlation")
 
 ![image](https://github.com/MutheuTheAnalyst/Python_Project_1/assets/92978069/9c97f882-7f7b-44d1-a0ef-c71455b47e7b)
+
+
+### 3) Regression plot to display the correlation between the variables 'Popularity' and 'Acousticness'.
+
+- From the visualization,we can observe that the two variables are negatively correlated.
+
+- **Code:**
+  
+  plt.figure(figsize=(10,6))
+  
+  sns.regplot(data=sample_df,y="popularity",x="acousticness",color="b").set(title="Popularity vs Acousticness Correlation") 
+
+ ![image](https://github.com/MutheuTheAnalyst/Python_Project_1/assets/92978069/e179f8a0-a483-4221-90b5-27d1a37c6f3a)
+
+ ### 4) Histogram plot to display the number of songs available per year
+
+ - From the visualization, we can observe that there was an increasing trend in the songs available from the the year 1980 towards the year 2000.However,by the year 2000, there  was a drastic drop in numbers followed by a steady growth towards the year 2010.  
 
 
 
