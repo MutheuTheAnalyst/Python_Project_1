@@ -88,15 +88,15 @@ dtypes: float64(9), int64(6), object(5)
 
    - **Code:** df_tracks[artists].iloc[18]
  
-- Created a new column namely 'duration' which contains data values from the 'duration_ms' column converted from milliseconds to seconds.In addittion,I dropped the duration_ms column.
+- **Created a new column namely 'duration'** which contains data values from the **'duration_ms' column converted from milliseconds to seconds**.In addittion,I **dropped the duration_ms column**.
 
    - **Code:** df_tracks["duration"]=df_tracks["duration_ms"].apply(lambda x:round(x/1000))
    
    - **Code 2:** df_tracks.drop("duration_ms",inplace=True,axis=1)
  
-   - To confirm that the column has been created successfully,I run the **code:** df_tracks.duration.head()
+   - To confirm that the column has been created successfully,I ran the **code:** df_tracks.duration.head()
  
-- Created a sample dataset(namely:'sample_df') from the existing dataset.This sample dataset is intented to make the EDA faster and more efficcient.The sample dataset contains 2346 records.
+- **Created a sample dataset(namely:'sample_df')** from the existing dataset.This sample dataset is intented to make the EDA faster and more efficcient.The sample dataset contains 2346 records.
 
      - **Code:**  sample_df=df_tracks.sample(int(0.004*len(df_tracks))) , print(len(sample_df))
 
