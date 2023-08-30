@@ -103,7 +103,7 @@ dtypes: float64(9), int64(6), object(5)
   ## Data Visualization.
   ### 1) Heatmap to display correlation between the dataset variables.
 
-  - The heatmap displays information about which variables are highly correlated with each other, either positively or negatively.
+  - The heatmap displays information about the extent of correlation between variables.The variables can either be positively correlated( 0 > x < 1) or negatively correlated(-1 > x < 0).
 
   - **Code:**
     
@@ -146,9 +146,41 @@ dtypes: float64(9), int64(6), object(5)
 
  ![image](https://github.com/MutheuTheAnalyst/Python_Project_1/assets/92978069/e179f8a0-a483-4221-90b5-27d1a37c6f3a)
 
- ### 4) Histogram plot to display the number of songs available per year
+ ### 4) Histogram plot to display the number of songs available per year.
 
- - From the visualization, we can observe that there was an increasing trend in the songs available from the the year 1980 towards the year 2000.However,by the year 2000, there  was a drastic drop in numbers followed by a steady growth towards the year 2010.  
+ - From the visualization, we can observe that there was an increasing trend in the songs available from the the year 1980 towards the year 2000.However,by the year 2000, there  was a drastic drop in numbers followed by a steady growth towards the year 2010.
+
+ -  **Code:**
+
+    df_tracks["dates"]=df_tracks.index.get_level_values("release_date")
+   
+    df_tracks.dates=pd.to_datetime(df_tracks.dates)
+   
+    years=df_tracks.dates.dt.year
+
+    sns.displot(years,discrete=True,aspect=2,height=5,kind="hist").set(title="Number of songs per year.")
+
+  ![image](https://github.com/MutheuTheAnalyst/Python_Project_1/assets/92978069/7afb6ce0-4be0-40aa-864d-4a4489cf7416)
+
+  ### 5) Line graph to showcase the average duration of songs over the years.
+
+  - From the visualization, we can observe that there was a fluctuating upwards and downward trend in relation to the the duration of songs throughout the time period.However, over the last 20 years(from 2000-2020), it is evident  that there has been a steady decline in the songs' duration.
+  
+  - **Code:**
+
+    total_dr=df_tracks.duration
+    
+    sns.set_style(style="whitegrid")
+    
+    fig_dims=(10,5)
+    
+    fig,ax=plt.subplots(figsize=fig_dims)
+    
+    fig=sns.lineplot(x=years,y=total_dr,ax=ax).set(title="Year Vs Duration")
+    
+    plot.xticks(rotation=90)
+
+![image](https://github.com/MutheuTheAnalyst/Python_Project_1/assets/92978069/246b4719-805b-4c01-94db-25f914cc7dd5)
 
 
 
