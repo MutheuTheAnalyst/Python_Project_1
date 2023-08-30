@@ -100,7 +100,43 @@ dtypes: float64(9), int64(6), object(5)
 
      - **Code:**  sample_df=df_tracks.sample(int(0.004*len(df_tracks))) , print(len(sample_df))
 
-  
+  ## Data Visualization.
+  ### 1) Heatmap to display correlation between the dataset variables.
+
+  - The heatmap displays information about which variables are highly correlated with each other, either positively or negatively.
+
+  - **Code:**
+    
+    corr_df=df_tracks.drop(["key","mode","explicit"],axis=1).corr(method='pearson')
+    
+    plt.figure(figsize=(14,6))
+    
+    heatmap=sns.heatmap(corr_df,annot=True,fmt=".1g",vmin=-1,vmax=1,center=0,cmap="inferno",linewidth=1,linecolor="Black")
+    
+    heatmap.set_tittle=("Correlation Heatmap between Variables")
+    
+    heatmap.set_xticklabels(heatmap.get_xticklabels(),rotation=90)
+
+
+      
+ ![image](https://github.com/MutheuTheAnalyst/Python_Project_1/assets/92978069/78dfd761-2b8c-4a1f-ab24-5d7648e2aad0)
+
+ ### 2) Regression Plot to display the correlation between the variables Loudness and Energy .
+
+ - From the visualization,it is clear to see that the two variables are highly positively correlated.
+
+ - **Code:**
  
+plt.figure(figsize=(10,6))
+
+sns.regplot(data=sample_df,y="loudness",x="energy",color="c").set(title="Loudness vs Energy Correlation")
+
+![image](https://github.com/MutheuTheAnalyst/Python_Project_1/assets/92978069/9c97f882-7f7b-44d1-a0ef-c71455b47e7b)
+
+
+
+
+ 
+
   
   
